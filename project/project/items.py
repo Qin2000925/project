@@ -35,3 +35,32 @@ class ZhiHutItem(scrapy.Item):
                         self['get_id'], self['user_url'], t_a)
 
         return sql_insert
+
+
+class TaobaoprojectItem(scrapy.Item):
+    nid = scrapy.Field()
+    raw_title = scrapy.Field()
+    pic_url = scrapy.Field()
+    detail_url = scrapy.Field()
+    view_price = scrapy.Field()
+    view_fee = scrapy.Field()
+    item_loc = scrapy.Field()
+    view_sales = scrapy.Field()
+    comment_count = scrapy.Field()
+    user_id = scrapy.Field()
+    nick = scrapy.Field()
+    isTmall = scrapy.Field()
+
+    def get_mysql(self):
+        t = int(time.time())
+        time_local = time.localtime(t)
+        t_a = time.strftime("%Y-%m-%d", time_local)
+
+        sql_insert = "insert into tao_bao_item(nid, raw_title, pic_url, detail_url, view_price, view_fee, item_loc, view_sales, " \
+                     "comment_count, user_id, nick, isTmall, add_time) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s',  " \
+                     "'%s', '%s', '%s', '%s', '%s', '%s')" \
+                     % (self['nid'], self['raw_title'], self['pic_url'], self['detail_url'], self['view_price'], self['view_fee'],
+                        self['item_loc'], self['view_sales'], self['comment_count'],
+                        self['user_id'], self['nick'], self['isTmall'], t_a)
+
+        return sql_insert
