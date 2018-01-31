@@ -1,2 +1,2 @@
 # 环境
-### python + ubuntu17.10
+### python3.6 + ubuntu17.10
