@@ -10,17 +10,13 @@ def analysis_js():
     month = '201801'
     city = '杭州'
 
-    file = 'weather.js'
-    ctx = node.compile(open(file).read())
+    ctx = node.compile(open('weather.js').read())
+    params = ctx.eval('getEncryptedData("{month}", "{city}", "{method}")'.format(month=month, city=city, method=method))
 
-    js = 'getEncryptedData("{month}", "{city}", "{method}")'.format(month=month, city=city, method=method)
-    params = ctx.eval(js)
+    response = requests.post('https://www.aqistudy.cn/historydata/api/historyapi.php', data={'hd': params})
 
-    api = 'https://www.aqistudy.cn/historydata/api/historyapi.php'
-    response = requests.post(api, data={'hd': params})
+    decrypted_data = ctx.eval('decodeData("{response}")'.format(response=response.text))
 
-    js = 'decodeData("{0}")'.format(response.text)
-    decrypted_data = ctx.eval(js)
     data = json.loads(decrypted_data)
     for item in data['result']['data']['items']:
         print(item)
