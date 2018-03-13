@@ -6,3 +6,4 @@ tesseract下载地址：http://digi.bib.uni-mannheim.de/tesseract
 tesseract GitHub：https://github.com/tesseract-ocr/tesseract
 tesseract语言包：https://github.com/tesseract-ocr/tessdata
 tesseract文档：https://github.com/tesseract-ocr/tesseract/wiki/Documentation
+hahah
