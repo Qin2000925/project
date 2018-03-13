@@ -1,0 +1,8 @@
+tesseract --list-langs  查看支持的语言
+sudo apt-get install -y tesseract-ocr libtesseract-dev libleptonica-dev  安装命令
+tesserocr GitHub：https://github.com/sirfz/tesserocr
+tesserocr PyPI：https://pypi.python.org/pypi/tesserocr
+tesseract下载地址：http://digi.bib.uni-mannheim.de/tesseract
+tesseract GitHub：https://github.com/tesseract-ocr/tesseract
+tesseract语言包：https://github.com/tesseract-ocr/tessdata
+tesseract文档：https://github.com/tesseract-ocr/tesseract/wiki/Documentation

@@ -79,7 +79,7 @@ def convert_data_set(split_name, file_name):
                 except IOError as e:
                     print('Could not read', filename)
                     print('Error: ', e)
-                    print('Skip it\n')
+                print('Skip it\n')
             sys.stdout.write('\n')
             sys.stdout.flush()
 
